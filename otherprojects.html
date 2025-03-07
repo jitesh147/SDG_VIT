@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Reuse All students projects</title>
+    <link rel="stylesheet" href="./search_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./search_files/style.css">
+    <link rel="stylesheet" href="./search_files/style2.css">
+   
+</head>
+<body>
+
+  <header class="d-flex flex-column align-items-center py-3 mb-4 border-bottom">
+    <img src="./search_files/images/vit.jpg" width="350" height="100" alt="VIT Logo"/>
+</header>
+
+<section class="features05 cid-rKYOVNMJdM">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 pb-5 col-lg-12 align-center">
+                <!-- <h2 class="mbr-section-subtitle mbr-exbold mbr-light mbr-fonts-style display-5"> -->
+                    <!-- Search here to find your website -->
+                <!-- </h2> -->
+                <input type="text" id="searchBox" placeholder="Search by name or reg.no or title" onkeyup="searchData()">
+				&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <button id="prev-btn" class="btn btn-primary" onclick="prevPage()" disabled>Previous</button>
+            <span id="page-info"></span>
+            <button id="next-btn" class="btn btn-primary" onclick="nextPage()">Next</button>
+				<br/><br/><br/>
+	
+                 <div id="data-container" class="row"></div>
+            </div>
+        </div>
+    </div>
+	
+	
+</section>
+<section data-bs-version="5.1" class="article05 printm5 cid-uEm8Rd4yrS" id="generic-text-5-uEm8Rd4yrS">
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="content-wrapper">
+				
+				  </div>
+					
+                </div>
+				
+            </div>
+        </div>
+
+<script>
+    // Simulated Data
+    const data = [
+    { name: "Ashwin Suresh", regno: "21MIS1174", img: "./search_files/images/1174.jpg", title: "SDG-8 carried out in VIT", url: "https://ashy06.github.io/SDG-8/" },
+    { name: "Srikanth Reddy", regno: "21MIS1095", img: "./search_files/images/1095.jpg", title: "Health Care Services and Schemes in Kurnool District, Andhra Pradesh (SDG-3)", url: "https://srikanthreddypvj.github.io/Software-Reuse/" },
+    { name: "Abijith A", regno: "21MIS1135", img: "./search_files/images/1135.jpg", title: "Tamil Nadu’s Fight Against Climate Change", url: "https://abijith006.github.io/Tamil-Nadu-s-Fight-Against-Climate-Change/" },
+    { name: "Gangireddy Madhurima", regno: "21MIS1155", img: "./search_files/images/1155.jpg", title: "Bridging Gaps in Quality Education", url: "https://madhurima03124.github.io/DA1/" },
+    { name: "B Pujitha", regno: "21MIS1090", img: "./search_files/images/1090.jpg", title: "Sanitation for All & Health for All", url: "https://bpujitha03.github.io/Reuse_21MIS1090/" },
+    { name: "Jeevan P", regno: "21MIS1040", img: "./search_files/images/1040.jpg", title: "Breaking Barriers: Education and Economic Upliftment", url: "https://jeevanrajith.github.io/Breaking-Barriers-Education-and-Economic-Upliftment/" },
+    { name: "R. Harshitha Reddy", regno: "21MIS1102", img: "./search_files/images/1102.jpg", title: "Zero Hunger in Karnataka", url: "https://harshitharachapalli.github.io/website_sdg_2/" },
+    { name: "T Pothan Sai", regno: "21MIS1105", img: "./search_files/images/1105.jpg", title: "Clean Water & Sanitation", url: "https://pothansai2004.github.io/SDG-6_initiative/" },
+    { name: "Gokul R", regno: "21MIS1113", img: "./search_files/images/1113.jpg", title: "Diet & Nutrition Planner", url: "https://gokul1807.github.io/Diet_Nutrition-Planner/" },
+    { name: "Jogi Srinath", regno: "21MIS1041", img: "./search_files/images/1041.jpg", title: "Transforming Lives Through Education", url: "https://jogisrinath1.github.io/reuse/" },
+    { name: "Grandhi Vyshnavi", regno: "21MIS1130", img: "./search_files/images/1130.jpg", title: "Hunger-Free World", url: "https://grandhivyshnavi.github.io/21MIS1130_DA1_Reuse/" },
+    { name: "Garige Vamshikrishna", regno: "21MIS1125", img: "./search_files/images/1125.jpg", title: "Green Energy Hub (SDG-7)", url: "https://vamshikrishna779.github.io/Green-Energy-Hub/" },
+    { name: "Syamantak Bharti", regno: "21MIS1002", img: "./search_files/images/1002.jpg", title: "SDG 4 Quality education in UP", url: "https://syamantak-git.github.io/SW_Reuse_DA1/" },
+    { name: "Mamidi Khushika Reddy", regno: "21MIS1083", img: "./search_files/images/1083.jpg", title: "TAMIL NADU ECONOMIC GROWTH AND DECENT WORK OPPORTUNITIES", url: "https://tn-eg-dw.onrender.com/" },
+    { name: "D. Rushma", regno: "21MIS1143", img: "./search_files/images/1143.jpg", title: "Sustainable Development GOAL - 16", url: "https://d-rushma.github.io/SoftwareReuse/" },
+    { name: "Indu Priya B", regno: "21MIS1080", img: "./search_files/images/1080.jpg", title: "Protecting Biodiversity in Andhra Pradesh", url: "https://indu-priya.github.io/reuse/" },
+    { name: "SaiLakshmi Jahnavi", regno: "21MIS1151", img: "./search_files/images/1151.jpg", title: "Path to Prosperity: Global Solutions for No Poverty", url: "https://jahnaviemani.github.io/NoPoverty/" },
+    { name: "P Chaitanya", regno: "21MIS1027", img: "./search_files/images/1027.jpg", title: "AP Health Vision", url: "https://chaitanya709.github.io/Software/" },
+  { name: "Haswanth Raj A", regno: "21MIS1053", img: "./search_files/images/1053.jpg", title: " SDG 17 goals", url: "https://haswanthraj.github.io/reuse/" },
+   { name: "Swetha Sri B", regno: "21MIS1115", img: "./search_files/images/1115.jpg", title: " SDG 13", url: "https://swethasri2263.github.io/ReuseDA1/" },
+  { name: "Jeyashithan Raaj", regno: "21MIS1159", img: "./search_files/images/1159.jpg", title: "SDG 7", url: "https://jeysr17.github.io/SwReuseDA/" },
+ { name: "Pavan Krishna O", regno: "21MIS1060", img: "./search_files/images/1060.jpg", title: "SDG3: Good Health and Well-being", url: "https://pavankrishna22.github.io/Reuse_DA1/" },
+    { name: "Usaid Aslan", regno: "21MIS1094", img: "./search_files/images/1094.jpg", title: "SDG 16, Only human", url: "https://nmua767.github.io/SDG-16--Only-Human/" },
+ { name: "Chandrakanth V", regno: "21MIS1114", img: "./search_files/images/1114.jpg", title: "Empowering Access to Clean, Affordable Energy", url: "https://chandu-cpz.github.io/reuse-da/" },
+     { name: "Beemer Sowmya", regno: "21MIS1122", img: "./search_files/images/1122.jpg", title: "MandirAtlas", url: "https://sowmya2026.github.io/MandirAtlass/" },
+  { name: "Anjali K", regno: "21MIS1015", img: "./search_files/images/1015.jpg", title: "Akshaya Patra: A Meal for Every Soul", url: "https://anjalisrinivas27.github.io/reuse/" },
+{ name: "Mounika Ainamilli", regno: "21MIS1008", img: "./search_files/images/1008.jpg", title: "FastFeast", url: "https://mounika2862.github.io/Fast-Feast/" },
+ { name: "Kaustubh Bharti", regno: "22MIS1067", img: "./search_files/images/1067.jpg", title: "Infrastructure and Innovation in Bihar", url: "https://kaustubh-bharti.github.io/SoftwareReuse/" },
+  { name: "P.Jayadeep", regno: "21MIS1156", img: "./search_files/images/1156.jpg", title: "Goal 14: Life below water SDG 14", url: "https://jayadeep8712.github.io/SDG-14/main/" },
+  { name: "P.Jayadeep", regno: "21MIS1156", img: "./search_files/images/1156_2.jpg", title: "Goal 14: Life below water SDG 14", url: "https://jayadeep8712.github.io/SDG-14/main/hey.html" },  
+  { name: "Basetty Varshini", regno: "21MIS1139", img: "./search_files/images/1139.jpg", title: "From inequality to inclusion : Shaping a fairer society", url: "https://basettyvarshini.github.io/SDG-10/" },  
+   { name: "Akash Reddy", regno: "21MIS1128", img: "./search_files/images/1128.jpg", title: "Renewable energy solutions(SDG-7)", url: "https://reddyakash.github.io/Reuse/" },  
+   { name: "Hemavarshini R", regno: "21MIS1136", img: "./search_files/images/1136.jpg", title: "Animal rescue and adoption -sdg 15 life on land", url: "https://hemavarshini01.github.io/SustainableDevGoal15/" },  
+{ name: "D Shivanesh", regno: "22MIS1146", img: "./search_files/images/1146.jpg", title: "TamilNadu Health and Well Being", url: "https://shivaneshd.github.io/TamilNadu-Health-and-Well-Being-/" },
+{ name: "Durga Sree Priya P", regno: "21MIS1177", img: "./search_files/images/1177.jpg", title: "Tamil Nadu Integrated Welfare Portal", url: "https://durgasreepriya.github.io/website/" }, 
+{ name: "L Manasa", regno: "21MIS1064", img: "./search_files/images/1064.jpg", title: "SDG-3 Good Health and Well-being", url: "https://manasa1321.github.io/21MIS1064_Sdg3/" },  
+{ name: "pavani Kandamudi", regno: "21MIS1111", img: "./search_files/images/1111.jpg", title: "SDG-13 Carbon footprint Calculator", url: "https://kandamudipavani.github.io/CARBONFOOTPRINT/" },  
+{ name: "Yashwanth Sankar", regno: "22MIS1188", img: "./search_files/images/1188.jpg", title: "SDG GOAL-1(Poverty)", url: "https://yashwanth182005.github.io/SDG-Goal-No-1" },  
+{ name: "sai venkata Ganesh", regno: "21MIS1110", img: "./search_files/images/1110.jpg", title: "Feed The Future(SDG 2)", url: "https://shdileep.github.io/SR/" },  
+{ name: "Harish D", regno: "22MIS1218", img: "./search_files/images/1218.jpg", title: "SDG no:4 quality education", url: "https://hari1672004.github.io/SDG-GOAL-No-4/" },  
+{ name: "Tracita H", regno: "21MIS1091", img: "./search_files/images/1091.jpg", title: "Tamil Nadu’s Commitment to SDG 6: Clean Water & Sanitation", url: "https://tracyhenry232.github.io/21MIS1091_REUSE_DA1/" },  
+{ name: "Harini V V", regno: "21MIS1164", img: "./search_files/images/1164.jpg", title: "SDG 4 - Quality Education", url: "https://comfy-pika-6499fd.netlify.app/" },  
+{ name: "Ghuhan M P", regno: "22MIS1166", img: "./search_files/images/1166.jpg", title: "Zero Hunger", url: "https://iamghuhan.github.io/Goal-No-2/" },
+{ name: "R Kavya", regno: "21MIS1034", img: "./search_files/images/1034.jpg", title: "Government School Analysis and Literacy rate comparison", url: "https://kavya015-11.github.io/Literacy-Rate-/" }, 
+{ name: "KAVYA B", regno: "21MIS1032", img: "./search_files/images/1032.jpg", title: "Government school website of Tamilnadu and comparison of top 2 literacy states in India", url: "https://kavya015-11.github.io/Govt-School-Analysis-/" },  
+{ name: "B Sri Dhanya Reddy ", regno: "21MIS1145", img: "./search_files/images/1145.jpg", title: "Zero Hunger", url: "https://dhanyareddy26.github.io/Goal-2-project/" },  
+{ name: "Aswathy V", regno: "21MIS1084", img: "./search_files/images/1084.jpg", title: "Foonate - Donate Excess Food(SDG-2 Zero Hunger)", url: "https://ashwathy20.github.io/reuse/" },  
+{ name: "Dasa Vikash R", regno: "21MIS1131", img: "./search_files/images/1131.jpg", title: "SDG-14 TAMILNADU'S stand", url: "https://sdg-14-tamilnadu.netlify.app/" },  
+{ name: "Mohammed Faizal H", regno: "21MIS1007", img: "./search_files/images/1007.jpg", title: "Feedy || Feed the Needy(SDG-1 : No poverty)", url: "https://faizal614.github.io/Feedy_/" },  
+{ name: "Dinesh Kumar V", regno: "21MIS1157", img: "./search_files/images/1157.jpg", title: "SDG14", url: "https://charming-pudding-5948e7.netlify.app/" },  
+{ name: "Nishant J", regno: "21MIS1012", img: "./search_files/images/1012.jpg", title: "Empowering lives", url: "https://nishhh03.github.io/nishanth.github.io/" },  
+{ name: "Pavithran S", regno: "21MIS1176", img: "./search_files/images/1176.jpg", title: "Sustainable-Development-Goal-SDG-12", url: "https://pavithran0829.github.io/Sustainable-Development-Goal-SDG-12/" },  
+{ name: "Sabarinath C", regno: "21MIS1086", img: "./search_files/images/1086.jpg", title: "ClearWay - Smart solutions for backlog management.", url: "https://sabarinath31.github.io/ClearWay/" },  
+{ name: "Vimal Kumar S", regno: "21MIS1021", img: "./search_files/images/1157.jpg", title: "Air Monitoring Reuse Project", url: "https://vimalkumar1610.github.io/Air-Monitoring-Reuse-Project/" },  
+{ name: "Thejaswini H", regno: "21MIS1051", img: "./search_files/images/1051.jpg", title: "Reduced Inequality (SDG10)", url: "https://thejaswini2323.github.io/sdg-10./" },
+{ name: "Srivarshan M", regno: "21MIS1178", img: "./search_files/images/1178.jpg", title: "Poverty in Africa", url: "https://srivarshan04.github.io/SDG1-Poverty/" },
+{ name: "Harsith Sankar SG", regno: "21MIS1078", img: "./search_files/images/1078.jpg", title: "SDG11: Sustainable Development Goal", url: "https://harsithsankar.github.io/sdgblog/" },
+{ name: "M Thanuja", regno: "21MIS1037", img: "./search_files/images/1037.jpg", title: "Empowering India's Farmers", url: "https://thanujam15.github.io/resuse/" },
+ 
+ <!-- upto this working fine --> 
+ 
+ 
+
+ <!-- { name: "DIYA SHREE SADINENI", regno: "21MIS1126", img: "./search_files/images/1126.jpg", title: "", url: "" },  -->
+ <!-- { name: "MONISH S", regno: "21MIS1063", img: "./search_files/images/1063.jpg", title: "", url: "" },  -->
+ <!-- { name: "SHAKTHIVEL R", regno: "21MIS1065", img: "./search_files/images/1065.jpg", title: "", url: "" },  -->
+];
+
+
+   const ITEMS_PER_PAGE = 12;
+    let currentPage = 1;
+    let filteredData = [...data]; // Start with full data
+
+    // Function to Display Data with Pagination
+    function displayData() {
+        const container = document.getElementById("data-container");
+        container.innerHTML = ""; 
+
+        const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+        const paginatedData = filteredData.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+        if (paginatedData.length === 0) {
+            container.innerHTML = "<p>No results found</p>";
+            return;
+        }
+		
+
+
+        paginatedData.forEach(item => {
+            const card = document.createElement("div");
+            card.className = "card item features-image col-12 col-md-6 col-lg-3";
+            card.innerHTML = `
+               
+                    <div class="item-wrapper">
+                        <div class="card-img">
+                            <a href="${item.url}" target="_blank">
+                                <img src="${item.img}" alt="Image" title="" width="200" height="200">
+                            </a>
+                        </div>
+                        <div class="card-box pt-3">
+						
+                            <h4 class="card-title pb-3 mbr-bold mbr-fonts-style display-7">${item.name}</h4>
+							<h6 class="card-text pb-3 mbr-bold mbr-fonts-style display-7">${item.regno}</h6>
+                            <div class="link-align">
+                                <div class="link-inline">
+                                   
+										<div class="link-wrap">
+                                        <h6 class="card-title link mbr-bold mbr-fonts-style display-4">
+										<a href="${item.url}"  target="_blank" class="text-black">${item.title}</a></h6>
+                                   </div>
+                                </div>
+                            </div>
+						
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+
+        document.getElementById("page-info").textContent = `Page ${currentPage} of ${Math.ceil(filteredData.length / ITEMS_PER_PAGE)}`;
+        document.getElementById("prev-btn").disabled = currentPage === 1;
+        document.getElementById("next-btn").disabled = currentPage === Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+    }
+
+    // Search Function (Filters by Name, Reg.No, or Title)
+    function searchData() {
+        let searchText = document.getElementById("searchBox").value.toLowerCase();
+        filteredData = data.filter(item =>
+            item.name.toLowerCase().includes(searchText) || 
+            item.regno.toLowerCase().includes(searchText) ||
+            item.title.toLowerCase().includes(searchText)
+        );
+
+        currentPage = 1; // Reset to first page when searching
+        displayData();
+    }
+
+    // Pagination Controls
+    function nextPage() {
+        if (currentPage < Math.ceil(filteredData.length / ITEMS_PER_PAGE)) {
+            currentPage++;
+            displayData();
+        }
+    }
+
+    function prevPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            displayData();
+        }
+    }
+
+    // Load Initial Data
+    window.onload = function() {
+        displayData();
+    };
+</script>
+<section data-bs-version="5.1" class="footer01 printm5 cid-uEm8RdpZYz" once="footers" id="footer-1-uEm8RdpZYz">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-12 col-lg-5">
+                
+            </div>
+            <div class="col-12 col-lg-10">
+                <p class="mbr-copy mbr-fonts-style display-4">© 2025 SDG Websites. All rights reserved. <br/>By VIT Chennai Students</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
